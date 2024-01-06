@@ -6,6 +6,7 @@ import {
   Navigate,
 } from "react-router-dom";
 import Home from "./pages/Home";
+import NewRide from "./pages/NewRide";
 import About from "./pages/About";
 import SignIn from "./pages/SignIn";
 import Error from "./pages/Error";
@@ -23,6 +24,10 @@ function App() {
         <Route
           path="/"
           element={isAuthenticated ? <Home /> : <Navigate to="/signin" />}
+        />
+        <Route
+          path="/newride"
+          element={isAuthenticated ? <NewRide /> : <Navigate to="/signin" />}
         />
         <Route
           path="/about"
